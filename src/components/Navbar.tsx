@@ -32,19 +32,31 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-secondary"
-                    : "text-primary-foreground/80 hover:text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-primary-foreground/80 hover:text-secondary"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    location.pathname === link.path
+                      ? "text-secondary"
+                      : "text-primary-foreground/80 hover:text-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile toggle */}
@@ -60,20 +72,33 @@ const Navbar = () => {
         {/* Mobile Nav */}
         {isOpen && (
           <div className="lg:hidden pb-4 animate-fade-in">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-secondary bg-secondary/10"
-                    : "text-primary-foreground/80 hover:text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 text-sm font-medium rounded-md transition-colors text-primary-foreground/80 hover:text-secondary"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                    location.pathname === link.path
+                      ? "text-secondary bg-secondary/10"
+                      : "text-primary-foreground/80 hover:text-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
         )}
       </div>
