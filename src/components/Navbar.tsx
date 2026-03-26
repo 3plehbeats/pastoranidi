@@ -4,13 +4,14 @@ import { Menu, X, Church } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Pastors", path: "/pastors" },
-  { name: "Bookstore", path: "/bookstore" },
-  { name: "Donate", path: "/donate" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", external: false },
+  { name: "About", path: "/about", external: false },
+  { name: "Services", path: "/services", external: false },
+  { name: "Pastors", path: "/pastors", external: false },
+  { name: "Bookstore", path: "/bookstore", external: false },
+  { name: "Donate", path: "/donate", external: false },
+  { name: "Contact", path: "/contact", external: false },
+  { name: "Webmail", path: "https://ajapexlimited.com/webmail", external: true },
 ];
 
 const Navbar = () => {
@@ -31,19 +32,31 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-secondary"
-                    : "text-primary-foreground/80 hover:text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-primary-foreground/80 hover:text-secondary"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    location.pathname === link.path
+                      ? "text-secondary"
+                      : "text-primary-foreground/80 hover:text-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile toggle */}
@@ -59,20 +72,33 @@ const Navbar = () => {
         {/* Mobile Nav */}
         {isOpen && (
           <div className="lg:hidden pb-4 animate-fade-in">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-secondary bg-secondary/10"
-                    : "text-primary-foreground/80 hover:text-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 text-sm font-medium rounded-md transition-colors text-primary-foreground/80 hover:text-secondary"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                    location.pathname === link.path
+                      ? "text-secondary bg-secondary/10"
+                      : "text-primary-foreground/80 hover:text-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
         )}
       </div>
