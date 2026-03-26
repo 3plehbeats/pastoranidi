@@ -4,13 +4,14 @@ import { Menu, X, Church } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Pastors", path: "/pastors" },
-  { name: "Bookstore", path: "/bookstore" },
-  { name: "Donate", path: "/donate" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", external: false },
+  { name: "About", path: "/about", external: false },
+  { name: "Services", path: "/services", external: false },
+  { name: "Pastors", path: "/pastors", external: false },
+  { name: "Bookstore", path: "/bookstore", external: false },
+  { name: "Donate", path: "/donate", external: false },
+  { name: "Contact", path: "/contact", external: false },
+  { name: "Webmail", path: "https://ajapexlimited.com/webmail", external: true },
 ];
 
 const Navbar = () => {
