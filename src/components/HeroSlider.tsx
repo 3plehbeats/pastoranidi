@@ -48,7 +48,7 @@ const HeroSlider = ({ slides: propSlides }: { slides?: Slide[] }) => {
         >
           <img
             src={slide.image_url}
-            alt={slide.title || `Slide ${index + 1}`}
+            alt={(slide as Slide).title || `Slide ${index + 1}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
