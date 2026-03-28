@@ -11,7 +11,7 @@ const navLinks = [
   { name: "Bookstore", path: "/bookstore", external: false },
   { name: "Donate", path: "/donate", external: false },
   { name: "Contact", path: "/contact", external: false },
-  { name: "Webmail", path: "https://das119.truehost.cloud:2096", external: true },
+  { name: "Webmail", path: "https://ajapexlimited.com:2096/", external: true },
 ];
 
 const Navbar = () => {
