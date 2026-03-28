@@ -31,8 +31,9 @@ const Index = () => {
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
             We are a vibrant community of believers located in Ojodu Berger, Lagos. 
-            Our mission is to spread the gospel of Jesus Christ, build strong families, 
-            and transform lives through faith, hope, and love.
+            Our vision is to make people see possibilities in our world (Luke 1:37), 
+            and our mission is to build people's confidence and hope through messages 
+            and teaching evidenced in the Bible (Gen 45:27).
           </p>
           <Link
             to="/about"
