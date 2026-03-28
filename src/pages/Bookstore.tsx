@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PublicLayout from "@/components/PublicLayout";
 import PageHero from "@/components/PageHero";
 import { supabase } from "@/integrations/supabase/client";
-import { BookOpen, ExternalLink } from "lucide-react";
+import { BookOpen, ExternalLink, ShoppingBag } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 
 interface Book {
@@ -32,16 +32,59 @@ const Bookstore = () => {
     <PublicLayout>
       <PageHero title="Bookstore" subtitle="Resources to deepen your faith" backgroundImage={aboutBg} />
 
-      <section className="section-padding bg-background">
-        <div className="container mx-auto max-w-5xl">
-          {books.length === 0 ? (
-            <div className="text-center py-12">
-              <BookOpen className="h-16 w-16 text-muted-foreground/30 mx-auto mb-4" />
-              <p className="text-muted-foreground text-lg">
-                Our bookstore is being stocked. Check back soon for inspiring reads!
-              </p>
-            </div>
-          ) : (
+      {/* Store Links */}
+      <section className="py-16 bg-primary/5">
+        <div className="container mx-auto max-w-4xl px-4 text-center">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-3">
+            Shop Pastor Anidi's Books
+          </h2>
+          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+            Explore inspiring titles by Pastor Patrick Anidi. Available on Amazon and Selar.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a
+              href="https://www.amazon.com/stores/Patrick-Anidi/author/B086WQX7LR?ref=ap_rdr&isDramIntegrated=true&shoppingPortalEnabled=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-4 p-8 rounded-2xl bg-card border border-border hover:border-secondary hover:shadow-xl transition-all duration-300"
+            >
+              <div className="h-16 w-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <ShoppingBag className="h-8 w-8 text-secondary" />
+              </div>
+              <div>
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Amazon Store</h3>
+                <p className="text-muted-foreground text-sm">Browse & purchase on Amazon</p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-secondary font-medium text-sm group-hover:underline">
+                Visit Store <ExternalLink className="h-4 w-4" />
+              </span>
+            </a>
+            <a
+              href="https://selar.com/m/patrick-anidi1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-4 p-8 rounded-2xl bg-card border border-border hover:border-secondary hover:shadow-xl transition-all duration-300"
+            >
+              <div className="h-16 w-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <BookOpen className="h-8 w-8 text-secondary" />
+              </div>
+              <div>
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-1">Selar Store</h3>
+                <p className="text-muted-foreground text-sm">Browse & purchase on Selar</p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-secondary font-medium text-sm group-hover:underline">
+                Visit Store <ExternalLink className="h-4 w-4" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Individual Books */}
+      {books.length > 0 && (
+        <section className="section-padding bg-background">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-10">Featured Books</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {books.map((book) => (
                 <div
@@ -80,9 +123,9 @@ const Bookstore = () => {
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
     </PublicLayout>
   );
 };
