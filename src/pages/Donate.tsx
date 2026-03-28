@@ -55,7 +55,7 @@ const Donate = () => {
                   <h3 className="font-serif text-xl font-semibold text-foreground mb-2">Mobile Transfer</h3>
                   <p className="text-muted-foreground">
                     You can also give via mobile money transfer. Contact us at{" "}
-                    <span className="text-secondary">+234 800 000 0000</span> for details.
+                    <span className="text-secondary">+234 803 300 4553</span> for details.
                   </p>
                 </div>
               </div>
