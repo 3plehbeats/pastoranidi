@@ -46,7 +46,7 @@ const Contact = () => {
               <div className="space-y-6">
                 {[
                   { icon: MapPin, label: "Address", value: "Ojodu Berger, Lagos, Nigeria" },
-                  { icon: Phone, label: "Phone", value: "+234 800 000 0000" },
+                  { icon: Phone, label: "Phone", value: "+234 803 300 4553" },
                   { icon: Mail, label: "Email", value: "info@houseoflivinghope.org" },
                   { icon: Clock, label: "Office Hours", value: "Mon - Fri: 9:00 AM - 5:00 PM" },
                 ].map((item) => (
