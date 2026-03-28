@@ -31,12 +31,12 @@ const About = () => {
               {
                 icon: Target,
                 title: "Our Mission",
-                text: "To spread the gospel of Jesus Christ, make disciples of all nations, and build a strong community of believers who are empowered to impact their world.",
+                text: "To build people's confidence and hope through messages and teaching evidenced in the Bible. — Gen 45:27",
               },
               {
                 icon: Eye,
                 title: "Our Vision",
-                text: "To be a beacon of hope and transformation in Lagos and beyond, raising leaders who will influence every sphere of society with the love of Christ.",
+                text: "To make people see possibilities in our world. — Luke 1:37",
               },
             ].map((item) => (
               <div
