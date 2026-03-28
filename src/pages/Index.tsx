@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock, MapPin, BookOpen, Heart, Users } from "lucide-react";
+import { Clock, MapPin, BookOpen, Heart, Users, Handshake } from "lucide-react";
 import PublicLayout from "@/components/PublicLayout";
 import HeroSlider from "@/components/HeroSlider";
 import { supabase } from "@/integrations/supabase/client";
+import homeImg from "@/assets/home-page-1.jpg";
 
 const Index = () => {
   const [slides, setSlides] = useState<any[]>([]);
@@ -25,21 +26,55 @@ const Index = () => {
 
       {/* Welcome Section */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Welcome to <span className="text-secondary">House of Living Hope</span>
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Welcome to <span className="text-secondary">House of Living Hope</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Calvary greetings to you in the unalloyed name of our Lord Jesus Christ. Whether you are a long-time member or a first-time visitor, we are glad to meet with you here!
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Our vision is to make people see possibilities in our world (Luke 1:37), and our mission is to build people's confidence and hope through messages and teaching evidenced in the Bible (Gen 45:27).
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                To us, the Bible is the <strong className="text-foreground">TREASURE POT</strong> for every <strong className="text-foreground">SUCCESS</strong>. Only those who embrace and study the Bible discover the best formula for their lives (2 Timothy 2:15, Psalm 25:14; Isaiah 45:3).
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Our core values are anchored on <strong className="text-foreground">respect for others, knowledge, and integrity</strong>.
+              </p>
+              <Link
+                to="/about"
+                className="inline-block border-2 border-secondary text-secondary font-semibold px-8 py-3 rounded-md hover:bg-secondary hover:text-secondary-foreground transition-colors"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img src={homeImg} alt="Church congregation in worship" className="w-full h-80 object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Believe Highlight */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto max-w-4xl text-center px-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+            What We <span className="text-secondary">Believe</span>
           </h2>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            We are a vibrant community of believers located in Ojodu Berger, Lagos. 
-            Our vision is to make people see possibilities in our world (Luke 1:37), 
-            and our mission is to build people's confidence and hope through messages 
-            and teaching evidenced in the Bible (Gen 45:27).
+          <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl mx-auto">
+            We believe that the FORMULA for effective deliverance and freedom from life challenges is knowing JESUS CHRIST; and accepting HIM as our LORD and SAVIOUR (Matthew 11:27-30).
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
+            On a typical Sunday morning at our church, men, women, and children of all ages gather for worship and encouragement. Our congregation has a warm and welcoming "family" feel.
           </p>
           <Link
-            to="/about"
-            className="inline-block border-2 border-secondary text-secondary font-semibold px-8 py-3 rounded-md hover:bg-secondary hover:text-secondary-foreground transition-colors"
+            to="/what-we-believe"
+            className="inline-block bg-secondary text-secondary-foreground font-semibold px-8 py-3 rounded-md hover:bg-secondary/90 transition-colors"
           >
-            Learn More About Us
+            Read Our Statement of Faith
           </Link>
         </div>
       </section>
@@ -50,11 +85,10 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-12">
             Join Us for <span className="text-secondary">Worship</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
-              { day: "Sunday Service", time: "8:00 AM & 10:30 AM", icon: Clock },
-              { day: "Wednesday Bible Study", time: "6:00 PM", icon: BookOpen },
-              { day: "Friday Prayer Meeting", time: "6:30 PM", icon: Heart },
+              { day: "WORD of HOPE (Sunday)", time: "9:00 AM – 11:00 AM", icon: Clock },
+              { day: "NIGHT OF PRAYER (Thursday)", time: "9:00 PM – 10:00 PM (Online)", icon: BookOpen },
             ].map((service) => (
               <div
                 key={service.day}
@@ -69,7 +103,7 @@ const Index = () => {
           <div className="text-center mt-8">
             <div className="flex items-center justify-center gap-2 text-primary-foreground/70">
               <MapPin className="h-4 w-4 text-secondary" />
-              <span>Ojodu Berger, Lagos, Nigeria</span>
+              <span>13, Oladipupo Oduwowe Street, Beside Bovas Oil Station, Opp. UBA, Ojodu, Lagos</span>
             </div>
           </div>
         </div>
@@ -78,26 +112,12 @@ const Index = () => {
       {/* Quick Links */}
       <section className="section-padding bg-background">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                title: "Our Pastors",
-                desc: "Meet the dedicated leaders guiding our church family.",
-                icon: Users,
-                link: "/pastors",
-              },
-              {
-                title: "Bookstore",
-                desc: "Explore inspiring books to strengthen your faith journey.",
-                icon: BookOpen,
-                link: "/bookstore",
-              },
-              {
-                title: "Give & Donate",
-                desc: "Support the work of God and help transform lives.",
-                icon: Heart,
-                link: "/donate",
-              },
+              { title: "Our Pastors", desc: "Meet the dedicated leaders guiding our church family.", icon: Users, link: "/pastors" },
+              { title: "Bookstore", desc: "Explore inspiring books to strengthen your faith journey.", icon: BookOpen, link: "/bookstore" },
+              { title: "Partner With Us", desc: "Support the work of God and help transform lives.", icon: Handshake, link: "/partner" },
+              { title: "Living Care", desc: "Our charity arm bringing hope to the less-privileged.", icon: Heart, link: "/living-care" },
             ].map((item) => (
               <Link
                 key={item.title}
@@ -112,6 +132,22 @@ const Index = () => {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Closing Invitation */}
+      <section className="py-16 bg-primary text-primary-foreground text-center">
+        <div className="container mx-auto max-w-3xl px-4">
+          <p className="text-lg leading-relaxed mb-6 text-primary-foreground/90">
+            We invite you to join us and discover what has drawn people to our warm congregation. We hope that you too will find House of Living Hope Gospel Ministry to be <strong className="text-secondary">a Place People See Possibilities in Our World</strong>.
+          </p>
+          <p className="text-primary-foreground/70 text-sm">
+            Questions? Contact us at{" "}
+            <a href="mailto:info@houseoflivinghope.org" className="text-secondary hover:underline">info@houseoflivinghope.org</a>{" · "}
+            <a href="mailto:dranidi@houseoflivinghope.org" className="text-secondary hover:underline">dranidi@houseoflivinghope.org</a>{" · "}
+            <a href="mailto:paanidi@gmail.com" className="text-secondary hover:underline">paanidi@gmail.com</a>
+          </p>
+          <p className="font-serif text-secondary mt-6 italic">Remain blessed! — Dr. Patrick & Juliet Anidi</p>
         </div>
       </section>
     </PublicLayout>
