@@ -1,21 +1,40 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Church } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Church, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/", external: false },
-  { name: "About", path: "/about", external: false },
-  { name: "Services", path: "/services", external: false },
+  {
+    name: "About",
+    path: "/about",
+    external: false,
+    children: [
+      { name: "Our Story", path: "/about" },
+      { name: "What We Believe", path: "/what-we-believe" },
+      { name: "Our History", path: "/history" },
+      { name: "Words of Wisdom", path: "/wisdom" },
+    ],
+  },
+  { name: "Programs", path: "/services", external: false },
   { name: "Pastors", path: "/pastors", external: false },
   { name: "Bookstore", path: "/bookstore", external: false },
-  { name: "Donate", path: "/donate", external: false },
+  {
+    name: "Give",
+    path: "/donate",
+    external: false,
+    children: [
+      { name: "Donate", path: "/donate" },
+      { name: "Partner With Us", path: "/partner" },
+      { name: "Living Care (Charity)", path: "/living-care" },
+    ],
+  },
   { name: "Contact", path: "/contact", external: false },
   { name: "Webmail", path: "https://ajapexlimited.com:2096/", external: true },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   return (
@@ -43,6 +62,42 @@ const Navbar = () => {
                 >
                   {link.name}
                 </a>
+              ) : link.children ? (
+                <div
+                  key={link.name}
+                  className="relative group"
+                  onMouseEnter={() => setOpenDropdown(link.name)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    to={link.path}
+                    className={`px-3 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1 ${
+                      location.pathname === link.path || link.children.some(c => c.path === location.pathname)
+                        ? "text-secondary"
+                        : "text-primary-foreground/80 hover:text-secondary"
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown className="h-3 w-3" />
+                  </Link>
+                  {openDropdown === link.name && (
+                    <div className="absolute top-full left-0 mt-0 w-48 bg-primary border border-secondary/20 rounded-md shadow-lg py-1 z-50">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            location.pathname === child.path
+                              ? "text-secondary bg-secondary/10"
+                              : "text-primary-foreground/80 hover:text-secondary hover:bg-secondary/5"
+                          }`}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link
                   key={link.path}
@@ -84,15 +139,37 @@ const Navbar = () => {
                 >
                   {link.name}
                 </a>
+              ) : link.children ? (
+                <div key={link.name}>
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      location.pathname === link.path ? "text-secondary bg-secondary/10" : "text-primary-foreground/80 hover:text-secondary"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                  {link.children.map((child) => (
+                    <Link
+                      key={child.path}
+                      to={child.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-8 py-2 text-sm transition-colors ${
+                        location.pathname === child.path ? "text-secondary" : "text-primary-foreground/60 hover:text-secondary"
+                      }`}
+                    >
+                      {child.name}
+                    </Link>
+                  ))}
+                </div>
               ) : (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                    location.pathname === link.path
-                      ? "text-secondary bg-secondary/10"
-                      : "text-primary-foreground/80 hover:text-secondary"
+                    location.pathname === link.path ? "text-secondary bg-secondary/10" : "text-primary-foreground/80 hover:text-secondary"
                   }`}
                 >
                   {link.name}
