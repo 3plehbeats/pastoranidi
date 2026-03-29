@@ -30,6 +30,7 @@ const navLinks = [
     ],
   },
   { name: "Contact", path: "/contact", external: false },
+  { name: "News", path: "https://moresglobal.com/news", external: true },
   { name: "Webmail", path: "https://ajapexlimited.com:2096/", external: true },
 ];
 
