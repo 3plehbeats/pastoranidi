@@ -44,6 +44,7 @@ const Partner = () => {
                     <p><span className="font-medium text-foreground">Account Name:</span> House of Living Hope Gospel Ministry</p>
                     <p><span className="font-medium text-foreground">Bank:</span> First Bank of Nigeria Plc.</p>
                     <p><span className="font-medium text-foreground">Account Number:</span> 2033153665</p>
+                    <p><span className="font-medium text-foreground">SWIFT Code:</span> FBNINGLA</p>
                   </div>
                 </div>
               </div>

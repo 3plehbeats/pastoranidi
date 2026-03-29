@@ -16,27 +16,27 @@ const leaders = [
   },
   {
     name: "Rev. (Mrs.) Juliet Anidi",
-    title: "Co-Pastor",
-    image: julietAnidi,
-    bio: "Rev. Juliet Anidi serves alongside Dr. Patrick Anidi as Co-Pastor of House of Living Hope Gospel Ministry. She is actively involved in the ministry's outreach, charity programs, and the coordination of Living Care — the charity arm of the ministry.",
-  },
-  {
-    name: "Pastor Peter Ekanem",
     title: "Associate Pastor",
+    image: julietAnidi,
+    bio: "Juliet Anidi is an Associate Pastor in the ministry; she is a beautician and a former staff of Pan Atlantic University School of Media & Communication. She is the Coordinator of the Church's Sunday school. She is currently the owner manager of Lady J Beauty Salon, Lagos. She is happily married to Dr. Patrick Anidi and are blessed with gracious children.",
+  },
+  {
+    name: "Peter Ekanem",
+    title: "Elder",
     image: peterEkanem,
-    bio: "Pastor Peter Ekanem is one of the experienced pastors who joined the church by the leading of God to help lift up the hands of God's servant to accomplish the God-given mandate.",
+    bio: "Peter Ekanem is an elder in the body of Christ — a rooted Christian believer with passion for Prayer. He is the head of the Prayer unit of the church. He is happily married to Mrs. Glory Ekanem. They are blessed with children.",
   },
   {
-    name: "Deaconess Comfort Nwoke",
-    title: "Deaconess",
+    name: "Comfort Nwoke",
+    title: "Head of Care-giver Ministry",
     image: comfortNwoke,
-    bio: "Deaconess Comfort Nwoke is a dedicated member of the leadership team at House of Living Hope Gospel Ministry, serving faithfully in various capacities within the church.",
+    bio: "Comfort Nwoke is a caterer by profession; she is currently the head of the Care-giver Ministry. She is a lovely mother and woman of great faith in Jesus Christ.",
   },
   {
-    name: "Goodluck Ikpefuran",
-    title: "Youth President",
+    name: "Ikpefunran Goodluck",
+    title: "Associate Pastor / Youth Leader",
     image: goodluckIkpefuran,
-    bio: "Goodluck Ikpefuran serves as the Youth President of House of Living Hope Gospel Ministry, leading the youth in spiritual growth, fellowship, and service to the community.",
+    bio: "Ikpefunran Goodluck is a teacher of the word of God. He is our Associate Pastor and the Ministry's youth leader. He is a graduate of Mass Communication; and self-employed in the transport sector of the Nigeria economy.",
   },
 ];
 

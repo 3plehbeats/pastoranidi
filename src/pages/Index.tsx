@@ -135,6 +135,34 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Messages / Sermons */}
+      <section className="section-padding bg-muted/50">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Our <span className="text-secondary">Messages</span>
+          </h2>
+          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+            Watch our latest sermons and teachings from our YouTube channel.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="rounded-lg overflow-hidden bg-card border border-border shadow-sm">
+                <div className="aspect-video bg-muted flex items-center justify-center text-muted-foreground">
+                  <div className="text-center p-6">
+                    <BookOpen className="h-10 w-10 mx-auto mb-2 text-secondary/50" />
+                    <p className="text-sm">Video coming soon</p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-serif font-semibold text-foreground">Sermon {i}</h3>
+                  <p className="text-muted-foreground text-sm">Video will be added shortly</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Closing Invitation */}
       <section className="py-16 bg-primary text-primary-foreground text-center">
         <div className="container mx-auto max-w-3xl px-4">
