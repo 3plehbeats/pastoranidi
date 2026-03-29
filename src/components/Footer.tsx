@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Church, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Church className="h-8 w-8 text-secondary" />
+              <img src={logo} alt="House of Living Hope" className="h-10 w-10 object-contain" />
               <span className="font-serif font-bold text-lg">House of Living Hope</span>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
