@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <Church className="h-8 w-8 text-secondary" />
+            <img src={logo} alt="House of Living Hope" className="h-12 w-12 object-contain" />
             <div className="leading-tight">
               <span className="block text-sm font-serif font-bold text-primary-foreground">House of Living Hope</span>
               <span className="block text-[10px] text-secondary tracking-widest uppercase">Ojodu Berger, Lagos</span>
