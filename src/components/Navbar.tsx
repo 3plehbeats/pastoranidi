@@ -17,6 +17,7 @@ const navLinks = [
     ],
   },
   { name: "Programs", path: "/services", external: false },
+  { name: "Ministries", path: "/ministries", external: false },
   { name: "Pastors", path: "/pastors", external: false },
   { name: "Bookstore", path: "/bookstore", external: false },
   {
