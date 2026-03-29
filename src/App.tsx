@@ -15,6 +15,7 @@ import HistoricEvents from "./pages/HistoricEvents";
 import WordsOfWisdom from "./pages/WordsOfWisdom";
 import LivingCare from "./pages/LivingCare";
 import Partner from "./pages/Partner";
+import Ministries from "./pages/Ministries";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/wisdom" element={<WordsOfWisdom />} />
           <Route path="/living-care" element={<LivingCare />} />
           <Route path="/partner" element={<Partner />} />
+          <Route path="/ministries" element={<Ministries />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
