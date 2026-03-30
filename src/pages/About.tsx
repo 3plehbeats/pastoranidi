@@ -1,6 +1,6 @@
 import PublicLayout from "@/components/PublicLayout";
 import PageHero from "@/components/PageHero";
-import aboutBg from "@/assets/about-bg.jpg";
+import aboutChurch from "@/assets/about-church.jpg";
 import youthMeeting from "@/assets/youth-meeting-1.jpg";
 import afterService from "@/assets/after-service-1.jpg";
 import { Target, Eye, Heart, BookOpen, History } from "lucide-react";
@@ -12,7 +12,7 @@ const About = () => {
       <PageHero
         title="About Us"
         subtitle="Discover our story, mission, and vision"
-        backgroundImage={aboutBg}
+        backgroundImage={aboutChurch}
       />
 
       {/* Our Story */}
