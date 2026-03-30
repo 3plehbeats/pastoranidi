@@ -4,7 +4,9 @@ import { Clock, MapPin, BookOpen, Heart, Users, Handshake } from "lucide-react";
 import PublicLayout from "@/components/PublicLayout";
 import HeroSlider from "@/components/HeroSlider";
 import { supabase } from "@/integrations/supabase/client";
-import homeImg from "@/assets/home-page-1.jpg";
+import welcomeImg from "@/assets/welcome-church.jpg";
+import quoteImg from "@/assets/quote-pastor.jpg";
+import believeImg from "@/assets/leaders-collage.jpg";
 
 const Index = () => {
   const [slides, setSlides] = useState<any[]>([]);
@@ -23,6 +25,23 @@ const Index = () => {
   return (
     <PublicLayout>
       <HeroSlider slides={slides.length > 0 ? slides : undefined} />
+
+      {/* Ministry Quote */}
+      <section className="py-12 bg-primary text-primary-foreground">
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="md:col-span-1 flex justify-center">
+              <img src={quoteImg} alt="Dr. Patrick Anidi" className="w-48 h-48 rounded-full object-cover border-4 border-secondary shadow-lg" />
+            </div>
+            <div className="md:col-span-2 text-center md:text-left">
+              <p className="font-serif text-xl md:text-2xl italic leading-relaxed mb-4">
+                "You can help to redesign tomorrow today, to make it more interesting for tomorrow generation"
+              </p>
+              <p className="text-secondary font-semibold">— Dr. Patrick Anidi</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Welcome Section */}
       <section className="section-padding bg-background">
@@ -52,7 +71,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img src={homeImg} alt="Church congregation in worship" className="w-full h-80 object-cover" />
+              <img src={welcomeImg} alt="Church congregation in worship" className="w-full h-80 object-cover" />
             </div>
           </div>
         </div>
@@ -60,22 +79,29 @@ const Index = () => {
 
       {/* What We Believe Highlight */}
       <section className="py-16 bg-muted/50">
-        <div className="container mx-auto max-w-4xl text-center px-4">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-            What We <span className="text-secondary">Believe</span>
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl mx-auto">
-            We believe that the FORMULA for effective deliverance and freedom from life challenges is knowing JESUS CHRIST; and accepting HIM as our LORD and SAVIOUR (Matthew 11:27-30).
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-            On a typical Sunday morning at our church, men, women, and children of all ages gather for worship and encouragement. Our congregation has a warm and welcoming "family" feel.
-          </p>
-          <Link
-            to="/what-we-believe"
-            className="inline-block bg-secondary text-secondary-foreground font-semibold px-8 py-3 rounded-md hover:bg-secondary/90 transition-colors"
-          >
-            Read Our Statement of Faith
-          </Link>
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+                What We <span className="text-secondary">Believe</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We believe that the FORMULA for effective deliverance and freedom from life challenges is knowing JESUS CHRIST; and accepting HIM as our LORD and SAVIOUR (Matthew 11:27-30).
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                On a typical Sunday morning at our church, men, women, and children of all ages gather for worship and encouragement. Our congregation has a warm and welcoming "family" feel.
+              </p>
+              <Link
+                to="/what-we-believe"
+                className="inline-block bg-secondary text-secondary-foreground font-semibold px-8 py-3 rounded-md hover:bg-secondary/90 transition-colors"
+              >
+                Read Our Statement of Faith
+              </Link>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img src={believeImg} alt="Our church leaders" className="w-full h-80 object-cover" />
+            </div>
+          </div>
         </div>
       </section>
 
