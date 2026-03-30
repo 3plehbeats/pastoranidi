@@ -34,7 +34,7 @@ const About = () => {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img src={youthMeeting} alt="Youth in meeting at House of Living Hope" className="w-full h-80 object-cover" />
+              <img src={aboutChurch} alt="Church members in fellowship" className="w-full h-80 object-cover" />
             </div>
           </div>
 
