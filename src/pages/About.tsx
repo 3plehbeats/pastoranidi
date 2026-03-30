@@ -1,7 +1,6 @@
 import PublicLayout from "@/components/PublicLayout";
 import PageHero from "@/components/PageHero";
 import aboutChurch from "@/assets/about-church.jpg";
-import chiImg from "@/assets/about-church.jpg";
 import youthMeeting from "@/assets/youth-meeting-1.jpg";
 import afterService from "@/assets/after-service-1.jpg";
 import { Target, Eye, Heart, BookOpen, History } from "lucide-react";
