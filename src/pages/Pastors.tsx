@@ -9,22 +9,22 @@ import peterEkanem from "@/assets/peter-ekanem.jpg";
 
 const leaders = [
   {
-    name: "Dr. Patrick Anidi",
+    name: "Patrick Anidi",
     title: "Senior Pastor / Founder",
     image: pastorPatrick,
-    bio: "Dr. Patrick Anidi is the founder of House of Living Hope Gospel Ministry. He received the mandate from God in 1996 after a 2-hour vision at Fina White Hotel in Kaduna, Nigeria. He is a pastor, life coach, business & social economic research consultant, and author of various books and articles. He holds a Masters and Ph.D from Triune Biblical University, Washington DC.",
+    bio: "Patrick Anidi is the founder of House of Living Hope Gospel Ministry. He received the mandate from God in 1996 after a 2-hour vision at Fina White Hotel in Kaduna, Nigeria. He is a pastor, life coach, business & social economic research consultant, and author of various books and articles. He holds a Masters and Ph.D from Triune Biblical University, Washington DC.",
   },
   {
-    name: "Rev. (Mrs.) Juliet Anidi",
+    name: "Juliet Anidi",
     title: "Associate Pastor",
     image: julietAnidi,
     bio: "Juliet Anidi is an Associate Pastor in the ministry; she is a beautician and a former staff of Pan Atlantic University School of Media & Communication. She is the Coordinator of the Church's Sunday school. She is currently the owner manager of Lady J Beauty Salon, Lagos. She is happily married to Dr. Patrick Anidi and are blessed with gracious children.",
   },
   {
-    name: "Peter Ekanem",
-    title: "Elder",
-    image: peterEkanem,
-    bio: "Peter Ekanem is an elder in the body of Christ — a rooted Christian believer with passion for Prayer. He is the head of the Prayer unit of the church. He is happily married to Mrs. Glory Ekanem. They are blessed with children.",
+    name: "Ikpefunran Goodluck",
+    title: "Associate Pastor / Youth Leader",
+    image: goodluckIkpefuran,
+    bio: "Ikpefunran Goodluck is a teacher of the word of God. He is our Associate Pastor and the Ministry's youth leader. He is a graduate of Mass Communication; and self-employed in the transport sector of the Nigeria economy.",
   },
   {
     name: "Comfort Nwoke",
@@ -33,10 +33,10 @@ const leaders = [
     bio: "Comfort Nwoke is a caterer by profession; she is currently the head of the Care-giver Ministry. She is a lovely mother and woman of great faith in Jesus Christ.",
   },
   {
-    name: "Ikpefunran Goodluck",
-    title: "Associate Pastor / Youth Leader",
-    image: goodluckIkpefuran,
-    bio: "Ikpefunran Goodluck is a teacher of the word of God. He is our Associate Pastor and the Ministry's youth leader. He is a graduate of Mass Communication; and self-employed in the transport sector of the Nigeria economy.",
+    name: "Peter Ekanem",
+    title: "Head of Prayer",
+    image: peterEkanem,
+    bio: "Peter Ekanem is a rooted Christian believer with passion for Prayer. He is the head of the Prayer unit of the church. He is happily married to Mrs. Glory Ekanem. They are blessed with children.",
   },
 ];
 
