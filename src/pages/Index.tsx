@@ -171,20 +171,36 @@ const Index = () => {
             Watch our latest sermons and teachings from our YouTube channel.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-lg overflow-hidden bg-card border border-border shadow-sm">
-                <div className="aspect-video bg-muted flex items-center justify-center text-muted-foreground">
-                  <div className="text-center p-6">
-                    <BookOpen className="h-10 w-10 mx-auto mb-2 text-secondary/50" />
-                    <p className="text-sm">Video coming soon</p>
-                  </div>
+            {[
+              { id: "kEGYyRdLStw", title: "FEAR NOT (Help is on the way)" },
+              { id: "IeCeyId1ahI", title: "FEAR NOT You are Secured" },
+              { id: "cJzI3Ap2Lnk", title: "FEAR NOT More about Fear" },
+            ].map((video) => (
+              <div key={video.id} className="rounded-lg overflow-hidden bg-card border border-border shadow-sm">
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-serif font-semibold text-foreground">Sermon {i}</h3>
-                  <p className="text-muted-foreground text-sm">Video will be added shortly</p>
+                  <h3 className="font-serif font-semibold text-foreground">{video.title}</h3>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="https://www.youtube.com/channel/UCvjNZvA67jWVKy4kVBYx1Yw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border-2 border-secondary text-secondary font-semibold px-8 py-3 rounded-md hover:bg-secondary hover:text-secondary-foreground transition-colors"
+            >
+              View All Messages on YouTube
+            </a>
           </div>
         </div>
       </section>
