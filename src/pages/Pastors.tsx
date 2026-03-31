@@ -64,7 +64,7 @@ const Pastors = () => {
           </div>
 
           {/* Other Leaders */}
-          <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-10">Church Leaders</h2>
+          <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-10">Church Admin Leaders</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {leaders.slice(1).map((leader) => (
               <div
