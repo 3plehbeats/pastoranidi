@@ -22,7 +22,7 @@ const leaders = [
   },
   {
     name: "Ikpefunran Goodluck",
-    title: "Associate Pastor / Youth Leader",
+    title: "Assistant Pastor / Youth Leader",
     image: goodluckIkpefuran,
     bio: "Ikpefunran Goodluck is a teacher of the word of God. He is our Associate Pastor and the Ministry's youth leader. He is a graduate of Mass Communication; and self-employed in the transport sector of the Nigeria economy.",
   },
@@ -34,7 +34,7 @@ const leaders = [
   },
   {
     name: "Peter Ekanem",
-    title: "Head of Prayer",
+    title: "Head of Prayer Ministries",
     image: peterEkanem,
     bio: "Peter Ekanem is a rooted Christian believer with passion for Prayer. He is the head of the Prayer unit of the church. He is happily married to Mrs. Glory Ekanem. They are blessed with children.",
   },
@@ -64,7 +64,7 @@ const Pastors = () => {
           </div>
 
           {/* Other Leaders */}
-          <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-10">Church Leaders</h2>
+          <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-10">Church Admin Leaders</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {leaders.slice(1).map((leader) => (
               <div
