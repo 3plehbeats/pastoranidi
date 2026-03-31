@@ -22,7 +22,7 @@ const leaders = [
   },
   {
     name: "Ikpefunran Goodluck",
-    title: "Associate Pastor / Youth Leader",
+    title: "Assistant Pastor / Youth Leader",
     image: goodluckIkpefuran,
     bio: "Ikpefunran Goodluck is a teacher of the word of God. He is our Associate Pastor and the Ministry's youth leader. He is a graduate of Mass Communication; and self-employed in the transport sector of the Nigeria economy.",
   },
