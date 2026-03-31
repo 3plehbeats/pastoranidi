@@ -34,7 +34,7 @@ const leaders = [
   },
   {
     name: "Peter Ekanem",
-    title: "Head of Prayer",
+    title: "Head of Prayer Ministries",
     image: peterEkanem,
     bio: "Peter Ekanem is a rooted Christian believer with passion for Prayer. He is the head of the Prayer unit of the church. He is happily married to Mrs. Glory Ekanem. They are blessed with children.",
   },
