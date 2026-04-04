@@ -20,6 +20,7 @@ const navLinks = [
   { name: "Ministries", path: "/ministries", external: false },
   { name: "Pastors", path: "/pastors", external: false },
   { name: "Bookstore", path: "/bookstore", external: false },
+  { name: "Bible School", path: "/bible-school", external: false },
   {
     name: "Give",
     path: "/donate",

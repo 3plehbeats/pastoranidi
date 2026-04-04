@@ -16,6 +16,7 @@ import WordsOfWisdom from "./pages/WordsOfWisdom";
 import LivingCare from "./pages/LivingCare";
 import Partner from "./pages/Partner";
 import Ministries from "./pages/Ministries";
+import BibleSchool from "./pages/BibleSchool";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/living-care" element={<LivingCare />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/ministries" element={<Ministries />} />
+          <Route path="/bible-school" element={<BibleSchool />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
