@@ -16,6 +16,7 @@ import WordsOfWisdom from "./pages/WordsOfWisdom";
 import LivingCare from "./pages/LivingCare";
 import Partner from "./pages/Partner";
 import Ministries from "./pages/Ministries";
+import BibleSchool from "./pages/BibleSchool";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
