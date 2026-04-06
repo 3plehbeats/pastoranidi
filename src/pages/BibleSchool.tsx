@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import { BookOpen, GraduationCap, Users, Clock, Mail, MessageSquareQuote } from "lucide-react";
 import drAnidiImg from "@/assets/dr-anidi-bible-school.jpeg";
 import admissionImg from "@/assets/bible-school-admission.jpeg";
+import studyImg from "@/assets/bible-school-study.jpeg";
 
 const BibleSchool = () => {
   const testimonials = [
@@ -114,30 +115,39 @@ const BibleSchool = () => {
             <h2 className="text-3xl font-serif font-bold text-primary mb-6">
               What Makes Us Different!
             </h2>
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
-              <p>
-                Truly, the school focuses on Christian education and seeks to equip,
-                develop and grow people with understanding and appreciation of the
-                personality, life, and teachings of Jesus Christ to lead them to better
-                personal experiences.
-              </p>
-              <p>
-                Living Hope School of Christian Education is not a fixated school for the
-                study of Bible related subjects only – it is much more.
-              </p>
-              <p>
-                The contents of our courses are blended, and encompass both biblical and
-                circular expository teachings and revelations. They are intentionally and
-                strategically designed to help the individuals or group of people
-                understand the environment and framework of their life journey beyond
-                ministry, and church, family, homes, but including business and career
-                fields among others.
-              </p>
-              <p className="font-semibold text-primary italic">
-                Dr. Patrick Anidi, Ph.D, fmra
-                <br />
-                President, Living Hope School of Christian Education.
-              </p>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="md:w-2/3 space-y-4 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  Truly, the school focuses on Christian education and seeks to equip,
+                  develop and grow people with understanding and appreciation of the
+                  personality, life, and teachings of Jesus Christ to lead them to better
+                  personal experiences.
+                </p>
+                <p>
+                  Living Hope School of Christian Education is not a fixated school for the
+                  study of Bible related subjects only – it is much more.
+                </p>
+                <p>
+                  The contents of our courses are blended, and encompass both biblical and
+                  circular expository teachings and revelations. They are intentionally and
+                  strategically designed to help the individuals or group of people
+                  understand the environment and framework of their life journey beyond
+                  ministry, and church, family, homes, but including business and career
+                  fields among others.
+                </p>
+                <p className="font-semibold text-primary italic">
+                  Dr. Patrick Anidi, Ph.D, fmra
+                  <br />
+                  President, Living Hope School of Christian Education.
+                </p>
+              </div>
+              <div className="md:w-1/3 flex-shrink-0">
+                <img
+                  src={studyImg}
+                  alt="Study materials"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
