@@ -150,50 +150,61 @@ const BibleSchool = () => {
             <h2 className="text-3xl font-serif font-bold text-primary mb-6">
               Admission Process
             </h2>
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
-              <p>
-                Candidates seeking admission into Living Hope School of Christian Education
-                are to send a formal application expressing interest for admission into the
-                school.
-              </p>
-              <p>
-                In addition to the expression of interest, it is our standard that each
-                candidate or student should write a Statement of Purpose of about 500 words
-                on why he or she is interested in Christian related Education from a Bible
-                School.
-              </p>
-              <p>
-                The Statement of Purpose is expected to indicate how the qualification or
-                skill to be earned will impact on the body of knowledge in the Christian
-                Community and the society at large.
-              </p>
-              <p>
-                Both the Expression of Interest and the Statement of Purpose are to be
-                submitted for evaluation prior to offer of admission and commencement of
-                lectures.
-              </p>
-              <div className="bg-primary/5 border border-primary/10 rounded-xl p-6 mt-6">
-                <p className="flex items-center gap-2 font-semibold text-primary mb-2">
-                  <Mail className="h-5 w-5" /> Submit Your Application
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="md:w-2/3 space-y-4 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  Candidates seeking admission into Living Hope School of Christian Education
+                  are to send a formal application expressing interest for admission into the
+                  school.
                 </p>
                 <p>
-                  Email:{" "}
-                  <a
-                    href="mailto:info@houseoflivinghope.org"
-                    className="text-secondary underline"
-                  >
-                    info@houseoflivinghope.org
-                  </a>
+                  In addition to the expression of interest, it is our standard that each
+                  candidate or student should write a Statement of Purpose of about 500 words
+                  on why he or she is interested in Christian related Education from a Bible
+                  School.
                 </p>
                 <p>
-                  Also copy:{" "}
-                  <a
-                    href="mailto:paanidi@gmail.com"
-                    className="text-secondary underline"
-                  >
-                    paanidi@gmail.com
-                  </a>
+                  The Statement of Purpose is expected to indicate how the qualification or
+                  skill to be earned will impact on the body of knowledge in the Christian
+                  Community and the society at large.
                 </p>
+                <p>
+                  Both the Expression of Interest and the Statement of Purpose are to be
+                  submitted for evaluation prior to offer of admission and commencement of
+                  lectures.
+                </p>
+                <div className="bg-primary/5 border border-primary/10 rounded-xl p-6 mt-6">
+                  <p className="flex items-center gap-2 font-semibold text-primary mb-2">
+                    <Mail className="h-5 w-5" /> Submit Your Application
+                  </p>
+                  <p>
+                    Email:{" "}
+                    <a
+                      href="mailto:info@houseoflivinghope.org"
+                      className="text-secondary underline"
+                    >
+                      info@houseoflivinghope.org
+                    </a>
+                  </p>
+                  <p>
+                    Also copy:{" "}
+                    <a
+                      href="mailto:paanidi@gmail.com"
+                      className="text-secondary underline"
+                    >
+                      paanidi@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="md:w-1/3 flex-shrink-0">
+                <img
+                  src={admissionImg}
+                  alt="Bible School Admission"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
               </div>
             </div>
           </div>
