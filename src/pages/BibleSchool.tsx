@@ -2,6 +2,7 @@ import PublicLayout from "@/components/PublicLayout";
 import PageHero from "@/components/PageHero";
 import { BookOpen, GraduationCap, Users, Clock, Mail, MessageSquareQuote } from "lucide-react";
 import drAnidiImg from "@/assets/dr-anidi-bible-school.jpeg";
+import admissionImg from "@/assets/bible-school-admission.jpeg";
 
 const BibleSchool = () => {
   const testimonials = [
