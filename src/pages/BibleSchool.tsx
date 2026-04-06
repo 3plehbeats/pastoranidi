@@ -70,13 +70,6 @@ const BibleSchool = () => {
               How the School Journey Got Started…
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/3 flex-shrink-0">
-                <img
-                  src={drAnidiImg}
-                  alt="Dr. Patrick Anidi"
-                  className="w-full rounded-xl shadow-lg"
-                />
-              </div>
               <div className="md:w-2/3 space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
                   In the month of May 2021, I got a call from a pastor friend based in the
