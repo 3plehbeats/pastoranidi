@@ -96,6 +96,13 @@ const BibleSchool = () => {
                   WAT).
                 </p>
               </div>
+              <div className="md:w-1/3 flex-shrink-0">
+                <img
+                  src={drAnidiImg}
+                  alt="Dr. Patrick Anidi"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
