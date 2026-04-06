@@ -115,15 +115,7 @@ const BibleSchool = () => {
             <h2 className="text-3xl font-serif font-bold text-primary mb-6">
               What Makes Us Different!
             </h2>
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/3 flex-shrink-0">
-                <img
-                  src={studyImg}
-                  alt="Study materials"
-                  className="w-full rounded-xl shadow-lg"
-                />
-              </div>
-              <div className="md:w-2/3 space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
                   Truly, the school focuses on Christian education and seeks to equip,
                   develop and grow people with understanding and appreciation of the
@@ -147,7 +139,6 @@ const BibleSchool = () => {
                   <br />
                   President, Living Hope School of Christian Education.
                 </p>
-              </div>
             </div>
           </div>
         </div>
@@ -226,23 +217,38 @@ const BibleSchool = () => {
             <h2 className="text-3xl font-serif font-bold text-primary mb-8">
               Courses
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {courses.map((course) => (
-                <div
-                  key={course.title}
-                  className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-14 h-14 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
-                    <course.icon className="h-7 w-7 text-secondary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-primary mb-3">
-                    {course.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {course.description}
-                  </p>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="md:w-2/3">
+                <div className="grid gap-6">
+                  {courses.map((course) => (
+                    <div
+                      key={course.title}
+                      className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-14 h-14 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <course.icon className="h-7 w-7 text-secondary" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-primary mb-2">
+                            {course.title}
+                          </h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {course.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="md:w-1/3 flex-shrink-0">
+                <img
+                  src={studyImg}
+                  alt="Study materials"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
