@@ -16,7 +16,7 @@ const PageHero = ({ title, subtitle, backgroundImage }: PageHeroProps) => {
       )}
       <div className="page-hero-overlay" />
       <div className="relative z-10 text-center px-4 py-16">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-3 animate-fade-in">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-6 animate-fade-in">
           {title}
         </h1>
         {subtitle && (
