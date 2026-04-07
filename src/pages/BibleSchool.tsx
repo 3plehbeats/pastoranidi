@@ -152,7 +152,14 @@ const BibleSchool = () => {
               Admission Process
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-2/3 space-y-4 text-muted-foreground text-lg leading-relaxed">
+              <div className="md:w-2/5 flex-shrink-0">
+                <img
+                  src={admissionImg}
+                  alt="Bible School Admission"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+              <div className="md:w-3/5 space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
                   Candidates seeking admission into Living Hope School of Christian Education
                   are to send a formal application expressing interest for admission into the
@@ -197,13 +204,6 @@ const BibleSchool = () => {
                     </a>
                   </p>
                 </div>
-              </div>
-              <div className="md:w-1/3 flex-shrink-0">
-                <img
-                  src={admissionImg}
-                  alt="Bible School Admission"
-                  className="w-full rounded-xl shadow-lg"
-                />
               </div>
             </div>
           </div>
