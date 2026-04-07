@@ -134,9 +134,9 @@ const Ministries = () => {
       <section className="bg-primary py-8">
         <div className="container mx-auto px-4 text-center">
           <blockquote className="font-serif text-lg md:text-xl italic text-primary-foreground/90 max-w-3xl mx-auto">
-            "You can help to redesign tomorrow today, to make it more interesting for tomorrow's generation"
+            "The main end of our lives is to serve God in the serving of men in the works of our callings."
           </blockquote>
-          <p className="text-secondary font-semibold mt-2">— Dr. Patrick Anidi</p>
+          <p className="text-secondary font-semibold mt-2">— Unknown</p>
         </div>
       </section>
 
