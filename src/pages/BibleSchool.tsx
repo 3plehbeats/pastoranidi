@@ -370,17 +370,24 @@ const BibleSchool = () => {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.name}
-                  className="bg-card border border-border rounded-xl p-6"
+                  className="bg-card border border-border rounded-xl p-6 flex flex-col sm:flex-row gap-5 items-start"
                 >
-                  <p className="text-muted-foreground italic leading-relaxed mb-4">
-                    "{testimonial.text}"
-                  </p>
-                  <p className="font-bold text-primary">
-                    – {testimonial.name},{" "}
-                    <span className="font-normal text-muted-foreground">
-                      {testimonial.location}
-                    </span>
-                  </p>
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-20 h-20 rounded-full object-cover object-top flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-muted-foreground italic leading-relaxed mb-4">
+                      "{testimonial.text}"
+                    </p>
+                    <p className="font-bold text-primary">
+                      – {testimonial.name},{" "}
+                      <span className="font-normal text-muted-foreground">
+                        {testimonial.location}
+                      </span>
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
