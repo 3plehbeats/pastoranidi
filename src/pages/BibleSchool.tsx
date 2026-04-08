@@ -4,32 +4,42 @@ import { BookOpen, GraduationCap, Users, Clock, Mail, MessageSquareQuote } from 
 import drAnidiImg from "@/assets/dr-anidi-bible-school.jpeg";
 import admissionImg from "@/assets/bible-school-admission.jpeg";
 import studyImg from "@/assets/bible-school-study.jpeg";
+import michaelImg from "@/assets/michael-dimkpa.jpeg";
+import titusImg from "@/assets/titus-alvan.jpeg";
+import uyoyomaImg from "@/assets/uyoyoma-edafe.jpeg";
+import anuoluwapoImg from "@/assets/anuoluwapo-ojo.jpeg";
+import omowunmiImg from "@/assets/omowunmi-adubi.jpeg";
 
 const BibleSchool = () => {
   const testimonials = [
     {
       name: "Michael Dimkpa",
       location: "United Kingdom",
+      image: michaelImg,
       text: "My time at Living Hope School of Christian Education has been so transformative. Attending the bible school made me to understand that, it is not just a school for studying scriptures, but a place to gain a deeper understanding of bible history and theology, major biblical doctrines and how they relate to each other. I have learned to apply biblical principles to my daily life and I feel more equipped than ever to serve others. The lessons covered during the bible school have given me a broader perspective – a resources for personal growth, spiritual discernment and engaging in conversations about faith and values.",
     },
     {
       name: "Pst Titus Matthew Alvan",
       location: "Lagos, Nigeria",
+      image: titusImg,
       text: "My period as a student at Living Hope School of Christian Education has been very wonderful and impactful in so many areas of my life and ministry. It has deepened and strengthened my understanding of God's Word and aid my spiritual foundation. Passing through Living Hope School of Christian Education has been a journey of transformation that continues to shape my mind and broaden my sense of purpose and vision.",
     },
     {
       name: "Uyoyoma Edafe Thankgod",
       location: "Delta State, Nigeria",
+      image: uyoyomaImg,
       text: "My coming to Living Hope School of Christian Education has really boosted or I can say re-ignite my passion for study once again. This few weeks of training has affected me positively by wanting to know more and read more. This study has opened my eye and knowledge to see things better and react to things better. It is an interactive online course that helps student achieve better engagement as well as grow both in their academic and business. If Living Hope School of Christian Education has other professional certify courses outside Christian education e.g Management courses, HR course, and so on. I will gladly pick up another application form.",
     },
     {
       name: "Ojo Anuoluwapo Elizabeth",
       location: "Oyo State, Nigeria",
+      image: anuoluwapoImg,
       text: "Attending Living Hope Bible School has been a transformative experience that has impacted my life. Over the past few weeks, I have gained valuable insights and perspectives that have changed my understanding of faith, community, and personal growth. This learning has helped me approach scripture with a more thoughtful perspective. I have gained new perspectives, skills, and understandings that have transformed my approach to faith, community, and personal growth. I am grateful for the opportunity to have been part of this community and look forward to continuing my journey of growth and discovery.",
     },
     {
       name: "Omowunmi Adubi",
       location: "Lagos State, Nigeria",
+      image: omowunmiImg,
       text: "Coming to study in Living Hope School of Christian Education has helped spiritual growth and development in several ways; and has opened my eyes to the things of God and better ways of life. The teaching on Emotional Intelligent has equipped me with the understanding that wisdom is required to live with others in our society in a seamless manner. I bless the name of God for being one of the students the program has really impacted.",
     },
   ];
@@ -360,17 +370,24 @@ const BibleSchool = () => {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.name}
-                  className="bg-card border border-border rounded-xl p-6"
+                  className="bg-card border border-border rounded-xl p-6 flex flex-col sm:flex-row gap-5 items-start"
                 >
-                  <p className="text-muted-foreground italic leading-relaxed mb-4">
-                    "{testimonial.text}"
-                  </p>
-                  <p className="font-bold text-primary">
-                    – {testimonial.name},{" "}
-                    <span className="font-normal text-muted-foreground">
-                      {testimonial.location}
-                    </span>
-                  </p>
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-20 h-20 rounded-full object-cover object-top flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-muted-foreground italic leading-relaxed mb-4">
+                      "{testimonial.text}"
+                    </p>
+                    <p className="font-bold text-primary">
+                      – {testimonial.name},{" "}
+                      <span className="font-normal text-muted-foreground">
+                        {testimonial.location}
+                      </span>
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
