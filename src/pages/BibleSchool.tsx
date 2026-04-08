@@ -4,6 +4,11 @@ import { BookOpen, GraduationCap, Users, Clock, Mail, MessageSquareQuote } from 
 import drAnidiImg from "@/assets/dr-anidi-bible-school.jpeg";
 import admissionImg from "@/assets/bible-school-admission.jpeg";
 import studyImg from "@/assets/bible-school-study.jpeg";
+import michaelImg from "@/assets/michael-dimkpa.jpeg";
+import titusImg from "@/assets/titus-alvan.jpeg";
+import uyoyomaImg from "@/assets/uyoyoma-edafe.jpeg";
+import anuoluwapoImg from "@/assets/anuoluwapo-ojo.jpeg";
+import omowunmiImg from "@/assets/omowunmi-adubi.jpeg";
 
 const BibleSchool = () => {
   const testimonials = [
