@@ -17,16 +17,16 @@ const About = () => {
       />
 
       {/* Quote Banner */}
-      <section className="bg-primary py-10">
+      <section className="bg-background py-10 border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/3 flex justify-center">
-            <img src={drAnidiQuote} alt="Dr. Patrick Anidi" className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-xl border-4 border-secondary/30" />
-          </div>
           <div className="md:w-2/3 text-center md:text-left">
-            <blockquote className="font-serif text-lg md:text-xl italic text-primary-foreground/90 leading-relaxed">
+            <blockquote className="font-serif text-lg md:text-xl italic text-foreground/90 leading-relaxed">
               "Success is possible with the right frame of mind; you can become "somebody from nobody"; growth comes from knowledge."
             </blockquote>
             <p className="text-secondary font-semibold mt-3">— Dr. Patrick Anidi</p>
+          </div>
+          <div className="md:w-1/3 flex justify-center">
+            <img src={drAnidiQuote} alt="Dr. Patrick Anidi" className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-xl border-4 border-secondary/30" />
           </div>
         </div>
       </section>
