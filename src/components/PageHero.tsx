@@ -20,7 +20,7 @@ const PageHero = ({ title, subtitle, backgroundImage }: PageHeroProps) => {
           {title}
         </h1>
         {subtitle && (
-          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto animate-slide-up">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto animate-slide-up italic">
             {subtitle}
           </p>
         )}
