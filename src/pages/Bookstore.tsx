@@ -67,9 +67,6 @@ const Bookstore = () => {
       <section className="bg-primary py-8">
         <div className="container mx-auto px-4 text-center max-w-3xl space-y-4">
           <blockquote className="font-serif text-lg md:text-xl italic text-primary-foreground/90">
-            Someone said, "Think before you speak. Read before you think."
-          </blockquote>
-          <blockquote className="font-serif text-lg md:text-xl italic text-primary-foreground/90">
             "Reading is to the mind what exercise is to the body."
           </blockquote>
           <p className="text-secondary font-semibold mt-2">— Richard Steele</p>
