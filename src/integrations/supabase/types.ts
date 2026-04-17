@@ -119,6 +119,42 @@ export type Database = {
         }
         Relationships: []
       }
+      page_content: {
+        Row: {
+          block_key: string
+          content: string
+          created_at: string
+          field_type: string
+          id: string
+          label: string
+          page_slug: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          block_key: string
+          content?: string
+          created_at?: string
+          field_type?: string
+          id?: string
+          label: string
+          page_slug: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          block_key?: string
+          content?: string
+          created_at?: string
+          field_type?: string
+          id?: string
+          label?: string
+          page_slug?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       pastors: {
         Row: {
           bio: string | null
@@ -203,6 +239,33 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      youtube_videos: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          sort_order: number
+          title: string
+          video_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          sort_order?: number
+          title: string
+          video_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          sort_order?: number
+          title?: string
+          video_id?: string
         }
         Relationships: []
       }
