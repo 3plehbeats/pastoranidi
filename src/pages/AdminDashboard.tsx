@@ -4,28 +4,32 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import {
-  Church, LogOut, Image, Users, Calendar, BookOpen, MessageSquare,
+  Church, LogOut, Image, Users, Calendar, BookOpen, MessageSquare, FileText, Youtube,
 } from "lucide-react";
 import AdminSlides from "@/components/admin/AdminSlides";
 import AdminPastors from "@/components/admin/AdminPastors";
 import AdminServices from "@/components/admin/AdminServices";
 import AdminBooks from "@/components/admin/AdminBooks";
 import AdminMessages from "@/components/admin/AdminMessages";
+import AdminPageContent from "@/components/admin/AdminPageContent";
+import AdminVideos from "@/components/admin/AdminVideos";
 
-type Tab = "slides" | "pastors" | "services" | "books" | "messages";
+type Tab = "content" | "slides" | "pastors" | "services" | "books" | "videos" | "messages";
 
 const tabs: { key: Tab; label: string; icon: any }[] = [
+  { key: "content", label: "Page Content", icon: FileText },
   { key: "slides", label: "Hero Slides", icon: Image },
   { key: "pastors", label: "Pastors", icon: Users },
   { key: "services", label: "Services", icon: Calendar },
   { key: "books", label: "Books", icon: BookOpen },
+  { key: "videos", label: "YouTube Videos", icon: Youtube },
   { key: "messages", label: "Messages", icon: MessageSquare },
 ];
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [activeTab, setActiveTab] = useState<Tab>("slides");
+  const [activeTab, setActiveTab] = useState<Tab>("content");
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -107,10 +111,12 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="flex-1 p-8 overflow-auto">
         <div className="max-w-5xl">
+          {activeTab === "content" && <AdminPageContent />}
           {activeTab === "slides" && <AdminSlides />}
           {activeTab === "pastors" && <AdminPastors />}
           {activeTab === "services" && <AdminServices />}
           {activeTab === "books" && <AdminBooks />}
+          {activeTab === "videos" && <AdminVideos />}
           {activeTab === "messages" && <AdminMessages />}
         </div>
       </main>
