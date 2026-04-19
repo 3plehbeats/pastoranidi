@@ -19,11 +19,12 @@ Deno.serve(async (req) => {
 
     let userId = created?.user?.id;
     if (createErr) {
-      // If user exists, look it up
+      // If user exists, look it up and reset the password
       const { data: list } = await supabase.auth.admin.listUsers();
       const existing = list?.users?.find((u) => u.email === email);
       if (!existing) throw createErr;
       userId = existing.id;
+      await supabase.auth.admin.updateUserById(userId, { password, email_confirm: true });
     }
 
     const { error: roleErr } = await supabase
