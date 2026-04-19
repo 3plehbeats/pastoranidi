@@ -8,9 +8,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock, Send, Globe } from "lucide-react";
 import hero3 from "@/assets/hero-3.jpg";
+import { usePageContent } from "@/hooks/usePageContent";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { get } = usePageContent("contact");
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
@@ -27,9 +29,21 @@ const Contact = () => {
     }
   };
 
+  const items = [
+    { icon: MapPin, label: "Address", value: get("address", "13, Oladipupo Oduwowe Street, Beside Bovas Oil Station, Opp. United Bank for Africa (UBA), Ojodu, Lagos-Nigeria") },
+    { icon: Phone, label: "Phone", value: get("phone", "+234 803 300 4553, +234 802 748 4615, +234 814 380 9010") },
+    { icon: Mail, label: "Email", value: get("email", "info@houseoflivinghope.org · paanidi@gmail.com") },
+    { icon: Globe, label: "Website", value: get("website", "www.houseoflivinghope.org") },
+    { icon: Clock, label: "Sunday Service", value: get("sunday_service", "9:00 AM – 11:00 AM") },
+  ];
+
   return (
     <PublicLayout>
-      <PageHero title="Contact Us" subtitle="We'd love to hear from you" backgroundImage={hero3} />
+      <PageHero
+        title={get("hero_title", "Contact Us")}
+        subtitle={get("hero_subtitle", "We'd love to hear from you")}
+        backgroundImage={hero3}
+      />
 
       <section className="section-padding bg-background">
         <div className="container mx-auto max-w-5xl">
@@ -40,24 +54,18 @@ const Contact = () => {
                 Worship Centre & <span className="text-secondary">Administrative Office</span>
               </h2>
               <p className="text-muted-foreground mb-2 font-semibold text-foreground">House of Living Hope Gospel Ministry</p>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you have a question, need prayer, or want to learn more about our church, we're here for you.
+              <p className="text-muted-foreground mb-8 leading-relaxed whitespace-pre-line">
+                {get("intro", "Whether you have a question, need prayer, or want to learn more about our church, we're here for you.")}
               </p>
               <div className="space-y-6">
-                {[
-                  { icon: MapPin, label: "Address", value: "13, Oladipupo Oduwowe Street, Beside Bovas Oil Station, Opp. United Bank for Africa (UBA), Ojodu, Lagos-Nigeria" },
-                  { icon: Phone, label: "Phone", value: "+234 803 300 4553, +234 802 748 4615, +234 814 380 9010" },
-                  { icon: Mail, label: "Email", value: "info@houseoflivinghope.org · paanidi@gmail.com" },
-                  { icon: Globe, label: "Website", value: "www.houseoflivinghope.org" },
-                  { icon: Clock, label: "Sunday Service", value: "9:00 AM – 11:00 AM" },
-                ].map((item) => (
+                {items.map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
                       <item.icon className="h-5 w-5 text-secondary" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">{item.label}</p>
-                      <p className="text-muted-foreground text-sm">{item.value}</p>
+                      <p className="text-muted-foreground text-sm whitespace-pre-line">{item.value}</p>
                     </div>
                   </div>
                 ))}

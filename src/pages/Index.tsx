@@ -4,12 +4,15 @@ import { Clock, MapPin, BookOpen, Heart, Users, Handshake } from "lucide-react";
 import PublicLayout from "@/components/PublicLayout";
 import HeroSlider from "@/components/HeroSlider";
 import { supabase } from "@/integrations/supabase/client";
+import { usePageContent } from "@/hooks/usePageContent";
 import welcomeImg from "@/assets/welcome-church.jpg";
 import quoteImg from "@/assets/quote-pastor.jpg";
 import believeImg from "@/assets/leaders-collage.jpg";
 
 const Index = () => {
   const [slides, setSlides] = useState<any[]>([]);
+  const [videos, setVideos] = useState<any[]>([]);
+  const { get } = usePageContent("home");
 
   useEffect(() => {
     supabase
@@ -20,7 +23,22 @@ const Index = () => {
       .then(({ data }) => {
         if (data && data.length > 0) setSlides(data);
       });
+    supabase
+      .from("youtube_videos")
+      .select("*")
+      .eq("is_active", true)
+      .order("sort_order")
+      .then(({ data }) => {
+        if (data) setVideos(data);
+      });
   }, []);
+
+  const fallbackVideos = [
+    { video_id: "kEGYyRdLStw", title: "FEAR NOT (Help is on the way)" },
+    { video_id: "IeCeyId1ahI", title: "FEAR NOT You are Secured" },
+    { video_id: "cJzI3Ap2Lnk", title: "FEAR NOT More about Fear" },
+  ];
+  const displayVideos = videos.length > 0 ? videos : fallbackVideos;
 
   return (
     <PublicLayout>
@@ -35,9 +53,9 @@ const Index = () => {
             </div>
             <div className="md:col-span-2 text-center md:text-left">
               <p className="font-serif text-xl md:text-2xl italic leading-relaxed mb-4">
-                "You can help to redesign tomorrow today, to make it more interesting for tomorrow generation"
+                {get("quote_text", '"You can help to redesign tomorrow today, to make it more interesting for tomorrow generation"')}
               </p>
-              <p className="text-secondary font-semibold">— Dr. Patrick Anidi</p>
+              <p className="text-secondary font-semibold">— {get("quote_author", "Dr. Patrick Anidi")}</p>
             </div>
           </div>
         </div>
@@ -49,19 +67,19 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Welcome to <span className="text-secondary">House of Living Hope</span>
+                {get("welcome_heading", "Welcome to House of Living Hope")}
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Calvary greetings to you in the unalloyed name of our Lord Jesus Christ. Whether you are a long-time member or a first-time visitor, we are glad to meet with you here!
+              <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">
+                {get("welcome_p1", "Calvary greetings to you in the unalloyed name of our Lord Jesus Christ. Whether you are a long-time member or a first-time visitor, we are glad to meet with you here!")}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Our vision is to make people see possibilities in our world (Luke 1:37), and our mission is to build people's confidence and hope through messages and teaching evidenced in the Bible (Gen 45:27).
+              <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">
+                {get("welcome_p2", "Our vision is to make people see possibilities in our world (Luke 1:37), and our mission is to build people's confidence and hope through messages and teaching evidenced in the Bible (Gen 45:27).")}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                To us, the Bible is the <strong className="text-foreground">TREASURE POT</strong> for every <strong className="text-foreground">SUCCESS</strong>. Only those who embrace and study the Bible discover the best formula for their lives (2 Timothy 2:15, Psalm 25:14; Isaiah 45:3).
+              <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">
+                {get("welcome_p3", "To us, the Bible is the TREASURE POT for every SUCCESS. Only those who embrace and study the Bible discover the best formula for their lives (2 Timothy 2:15, Psalm 25:14; Isaiah 45:3).")}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Our core values are anchored on <strong className="text-foreground">respect for others, knowledge, and integrity</strong>.
+              <p className="text-muted-foreground leading-relaxed mb-6 whitespace-pre-line">
+                {get("welcome_p4", "Our core values are anchored on respect for others, knowledge, and integrity.")}
               </p>
               <Link
                 to="/about"
@@ -85,11 +103,11 @@ const Index = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
                 What We <span className="text-secondary">Believe</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                We believe that the FORMULA for effective deliverance and freedom from life challenges is knowing JESUS CHRIST; and accepting HIM as our LORD and SAVIOUR (Matthew 11:27-30).
+              <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">
+                {get("believe_p1", "We believe that the FORMULA for effective deliverance and freedom from life challenges is knowing JESUS CHRIST; and accepting HIM as our LORD and SAVIOUR (Matthew 11:27-30).")}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                On a typical Sunday morning at our church, men, women, and children of all ages gather for worship and encouragement. Our congregation has a warm and welcoming "family" feel.
+              <p className="text-muted-foreground leading-relaxed mb-8 whitespace-pre-line">
+                {get("believe_p2", "On a typical Sunday morning at our church, men, women, and children of all ages gather for worship and encouragement. Our congregation has a warm and welcoming \"family\" feel.")}
               </p>
               <Link
                 to="/what-we-believe"
@@ -171,15 +189,11 @@ const Index = () => {
             Watch our latest sermons and teachings from our YouTube channel.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { id: "kEGYyRdLStw", title: "FEAR NOT (Help is on the way)" },
-              { id: "IeCeyId1ahI", title: "FEAR NOT You are Secured" },
-              { id: "cJzI3Ap2Lnk", title: "FEAR NOT More about Fear" },
-            ].map((video) => (
-              <div key={video.id} className="rounded-lg overflow-hidden bg-card border border-border shadow-sm">
+            {displayVideos.map((video: any) => (
+              <div key={video.video_id} className="rounded-lg overflow-hidden bg-card border border-border shadow-sm">
                 <div className="aspect-video">
                   <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
+                    src={`https://www.youtube.com/embed/${video.video_id}`}
                     title={video.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -208,8 +222,8 @@ const Index = () => {
       {/* Closing Invitation */}
       <section className="py-16 bg-primary text-primary-foreground text-center">
         <div className="container mx-auto max-w-3xl px-4">
-          <p className="text-lg leading-relaxed mb-6 text-primary-foreground/90">
-            We invite you to join us and discover what has drawn people to our warm congregation. We hope that you too will find House of Living Hope Gospel Ministry to be <strong className="text-secondary">a Place People See Possibilities in Our World</strong>.
+          <p className="text-lg leading-relaxed mb-6 text-primary-foreground/90 whitespace-pre-line">
+            {get("closing_text", "We invite you to join us and discover what has drawn people to our warm congregation. We hope that you too will find House of Living Hope Gospel Ministry to be a Place People See Possibilities in Our World.")}
           </p>
           <p className="text-primary-foreground/70 text-sm">
             Questions? Contact us at{" "}
@@ -217,7 +231,7 @@ const Index = () => {
             <a href="mailto:dranidi@houseoflivinghope.org" className="text-secondary hover:underline">dranidi@houseoflivinghope.org</a>{" · "}
             <a href="mailto:paanidi@gmail.com" className="text-secondary hover:underline">paanidi@gmail.com</a>
           </p>
-          <p className="font-serif text-secondary mt-6 italic">Remain blessed! — Dr. Patrick & Juliet Anidi</p>
+          <p className="font-serif text-secondary mt-6 italic">{get("closing_signoff", "Remain blessed! — Dr. Patrick & Juliet Anidi")}</p>
         </div>
       </section>
     </PublicLayout>
