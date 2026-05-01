@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import { Clock, BookOpen, Video, MapPin } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
 import youthMeeting from "@/assets/youth-meeting-2.jpg";
+import pastorPortrait from "@/assets/pastor-portrait.jpg";
 import { usePageContent } from "@/hooks/usePageContent";
 
 const Services = () => {
@@ -17,10 +18,19 @@ const Services = () => {
       />
 
       <section className="section-padding bg-background">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto whitespace-pre-line">
-            {get("intro", "At the moment, House of Living Hope Gospel Ministry is known for two (2) services or programs:")}
-          </p>
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+            <p className="text-muted-foreground italic text-lg leading-relaxed whitespace-pre-line order-2 md:order-1">
+              {get("intro", "At the moment, House of Living Hope Gospel Ministry is known for two (2) services or programs:")}
+            </p>
+            <div className="order-1 md:order-2 flex justify-center">
+              <img
+                src={pastorPortrait}
+                alt="Pastor of House of Living Hope Gospel Ministry"
+                className="rounded-2xl shadow-lg max-h-96 object-cover"
+              />
+            </div>
+          </div>
 
           <div className="space-y-10">
             {/* Word of Hope */}
